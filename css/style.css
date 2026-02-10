@@ -73,7 +73,7 @@ body {
 
 /* 顶部轮播区 */
 .hero-section {
-    height: 45vh;
+    height: 50vh;
     min-height: 435px;
     position: relative;
     overflow: hidden;
@@ -1304,7 +1304,7 @@ body.dark-theme .footer-stats {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .theme-toggle {
         top: 15px;
         right: 15px;
@@ -1314,8 +1314,8 @@ body.dark-theme .footer-stats {
     }
 
     .hero-section {
-        height: 40vh;
-        min-height: 250px;
+        height: 50vh;
+        min-height: 435px;
     }
 
     .floating-avatar {
