@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 主题切换按钮 -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- 顶部轮播区 -->
+    <header class="hero-section">
+        <div class="photo-slideshow" id="slideshow">
+            <!-- 图片将通过JS动态加载 -->
+        </div>
+
+        <div class="hero-overlay">
+            <div class="avatar-container">
+                <img src="./photos/1.png" alt="李明达" class="floating-avatar">
+                <h1 class="hero-title">李明达</h1>
+                <p class="hero-subtitle">10后编程探索者</p>
+
+                <div class="quick-contact">
+                    <a href="mailto:limingda1212@outlook.com" class="contact-icon" title="邮箱">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/limingda1212" target="_blank" class="contact-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://weixin.qq.com/" class="contact-icon" title="微信号: limingda1212">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                    <a href="tel:+8617686965698" class="contact-icon" title="电话: +86 17686965698">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>向下探索</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="main-content">
+        <!-- 导航标签 -->
+        <nav class="content-tabs">
+            <div class="container">
+                <div class="tabs-wrapper">
+                    <button class="tab-btn active" data-tab="about">
+                        <i class="fas fa-user"></i> 关于我
+                    </button>
+                    <button class="tab-btn" data-tab="projects">
+                        <i class="fas fa-code"></i> 项目
+                    </button>
+                    <button class="tab-btn" data-tab="recommendations">
+                        <i class="fas fa-star"></i> 推荐
+                    </button>
+                    <button class="tab-btn" data-tab="contact">
+                        <i class="fas fa-envelope"></i> 联系
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 标签内容区 -->
+        <div class="container">
+            <!-- 关于我 -->
+            <section class="tab-content active" id="about">
+                <div class="about-intro">
+                    <div class="intro-text">
+                        <h2>你好！我是明达</h2>
+                        <p>一名来自中国的10后开发者，对代码世界充满好奇和热情。从写出第一个"Hello World"到现在，我正在一步步探索编程的奥秘。</p>
+                        <p>我相信技术能够改变世界，而学习编程是我理解这个世界的方式。虽然还有很多要学，但我享受每一次解决问题的过程！</p>
+                    </div>
+                    <div class="intro-photo">
+                        <img src="./photos/about1.jpg" alt="学习" class="rounded-photo">
+                    </div>
+                </div>
+
+                <!-- 交替展示部分 -->
+                <div class="alternating-section">
+                    <div class="alternating-item">
+                        <div class="item-photo">
+                            <img src="./photos/coding.png" alt="编程">
+                        </div>
+                        <div class="item-text">
+                            <h3>最近在学习</h3>
+                            <ul class="learning-list">
+                                <li>JavaScript</li>
+                                <li>爬虫js逆向</li>
+                                <li>Python人工智能</li>
+                                <li>Git版本控制</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alternating-item reverse">
+                        <div class="item-text">
+                            <h3>目前掌握的技能</h3>
+                            <div class="skills-showcase">
+                                <span class="skill-tag">JavaScript基础</span>
+                                <span class="skill-tag">Python基础</span>
+                                <span class="skill-tag">Python网络爬虫基础</span>
+                                <span class="skill-tag">Linux-Ubuntu使用</span>
+                                <span class="skill-tag">Git/GitHub</span>
+                            </div>
+                        </div>
+                        <div class="item-photo">
+                            <img src="./photos/skills.jpg" alt="技能">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 时间轴 -->
+                <div class="timeline-section">
+                    <h3>我的足迹</h3>
+                    <div class="timeline">
+                        <div class="timeline-track"></div>
+
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2022.09</div>
+                                <h4>开始学习Scratch</h4>
+                                <p>感觉编程很有意思</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023.12</div>
+                                <h4>开始学习Python</h4>
+                                <p>正值初一寒假,在网购平台买了一本Python教程书,跟着视频学习,只能说Python真的简单好用易上手</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2024.01</div>
+                                <h4>编写第一个较为完整的Python程序</h4>
+                                <p>跟着网课老师编写了一个名片管理程序</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2024.07</div>
+                                <h4>开始学习Python的Tkinter</h4>
+                                <p>通过在线教程学习,让自己的程序有了一个好看的界面</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                         <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2024.12</div>
+                                <h4>继续学习Python的其他库</h4>
+                                <p>学习了os,sys,time,datatime等库,并复习了Python基础和Tkinter</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2025.07</div>
+                                <h4>开始学习Python网络爬虫</h4>
+                                <p>在网上买了一本很厚的教程书,1000多页,虽然暑假只学完了基础,但学完之后感觉爬虫真的很有用</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2025.08</div>
+                                <h4>编写了第一个真正完整的Python项目</h4>
+                                <p>使用Python基础和爬虫知识编写了一个代理池管理项目,并使用Git进行版本维护,通过Github Actions自动维护,此后进行了大量修改,并拆分编写了云端部署版和本地版,功能越来越完善.截至2026.1已经有7万个代理</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2025.08</div>
+                                <h4>开始学习Javascript</h4>
+                                <p>出于爬虫js逆向的需要,开始学习Javascript</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2025.12</div>
+                                <h4>训练的第一个深度学习模型(CRNN)</h4>
+                                <p>由于爬虫经常被字符验证码拦截,为了通过验证,简单学习了深度学习知识,用pytorch训练了第一个成功的验证码识别模型,使用5阶段训练路线,对于较少干扰的普通字体和手写字体图像识别准确率达 100% ,较多干扰的普通字体和手写字体图像准确率 99%-97%, 没见过的其他风格的较难验证码也有 80% 左右的准确率</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <div class="timeline-date">2026.2</div>
+                                <h4>编写自己的第一个个人网站</h4>
+                                <p>使用Github Pages搭建了自己的第一个网站</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目 -->
+            <section class="tab-content" id="projects">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-tag">已完成</div>
+                            <img src="./photos/project1.png" alt="个人网站项目">
+                        </div>
+                        <div class="project-info">
+                            <h3>个人网站建设</h3>
+                            <p>你正在看的这个网站！使用HTML、CSS和原生JavaScript开发，包含了响应式设计和主题切换功能。</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://github.com/limingda1212/limingda1212.github.io" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 查看代码
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-tag">已完成</div>
+                            <img src="./photos/project2.png" alt="进制转换工具">
+                        </div>
+                        <div class="project-info">
+                            <h3>进制转换工具</h3>
+                            <p>一个简单的进制转换工具,支持浮点小数,支持2-36进制</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                            </div>
+                            <a href="https://github.com/limingda1212/Number-Base-Conversion" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 查看代码
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-tag">已完成</div>
+                            <img src="./photos/project3.png" alt="英汉词典软件">
+                        </div>
+                        <div class="project-info">
+                            <h3>英汉词典软件</h3>
+                            <p>通过有道翻译api获取翻译,并记录在本地,下次使用时可以直接从本地获取,通过查单词来完善本地词库</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>API</span>
+                                <span>JSON</span>
+                            </div>
+                            <a href="https://github.com/limingda1212/Translation" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 查看代码
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-tag">已完成</div>
+                            <img src="./photos/project4.png" alt="密码字典">
+                        </div>
+                        <div class="project-info">
+                            <h3>密码字典</h3>
+                            <p>收集的各种密码字典,方便进行密码破解</p>
+                            <div class="project-tech">
+                                <span>txt</span>
+                            </div>
+                            <a href="https://github.com/limingda1212/Key-Dictionary" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 查看代码
+                            </a>
+                        </div>
+                    </div>
+
+                     <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-tag">已完成</div>
+                            <img src="./photos/project5.png" alt="代理池管理">
+                        </div>
+                        <div class="project-info">
+                            <h3>代理池管理</h3>
+                            <p>高效的代理池管理项目,支持众多功能,支持云端本地同步部署</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>HTML</span>
+                                <span>API</span>
+                                <span>JSON</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://github.com/limingda1212/Proxy-Pool" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 查看代码
+                            </a>
+                        </div>
+                    </div>
+
+<!--                    <button class="project-link" disabled>   -->
+<!--                      <i class="fas fa-clock"></i> 准备中   -->
+<!--                    </button>   -->
+                </div>
+            </section>
+
+            <!-- 推荐 -->
+            <section class="tab-content" id="recommendations">
+                <div class="recommendations-grid">
+                    <!-- 网站推荐 -->
+                    <div class="recommendation-section">
+                        <h3><i class="fas fa-globe"></i> 推荐网站</h3>
+                        <div class="recommendation-list">
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>Yandex</h4>
+                                    <p>俄罗斯最大的搜索引擎,具有海量优质内容</p>
+                                    <a href="https://yandex.com/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>HF-Mirror</h4>
+                                    <p>国内HuggingFace镜像</p>
+                                    <a href="https://hf-mirror.com/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>TechSpot</h4>
+                                    <p>一个面向计算机和科技爱好者的综合技术资讯网站,提供新闻、产品评测、软件下载和技术分析</p>
+                                    <a href="https://www.techspot.com/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>学习强国</h4>
+                                    <p>由中共中央宣传部组织建设的在线学习平台,提供科学理论学习和思想文化聚合的资源</p>
+                                    <a href="https://www.xuexi.cn/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>廖雪峰的官方网站</h4>
+                                    <p>专注于提供计算机编程学习资源的平台,所有的教程和资料都是中文的,对于中文母语者来说非常友好</p>
+                                    <a href="https://liaoxuefeng.com/index.html" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>PNGmg</h4>
+                                    <p>提供高质量PNG图像资源的在线图片库这个网站,由一个小团队创建,他们平时的工作需要大量的免抠素材,因此创建了PngImg来分享这些资源</p>
+                                    <a href="https://pngimg.com/images/animals/anaconda" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>pixabay</h4>
+                                    <p>免费的图库网站,成立于2010年,提供大量的免版权费媒体资源,包括照片、插图、矢量图、视频和音乐等</p>
+                                    <a href="https://pixabay.com/zh/photos/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>共青春</h4>
+                                    <p>提供免费影片资源,较稳定</p>
+                                    <a href="https://gqc.ink/" target="_blank">访问网站 →</a>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-codepen"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>其他</h4>
+                                    <p>好的网站太多了,点击这里查看站主的书签</p>
+                                    <a href="./bookmarks.html" target="_blank">查看书签 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 工具推荐 -->
+                    <div class="recommendation-section">
+                        <h3><i class="fas fa-tools"></i> 推荐工具</h3>
+                        <div class="recommendation-list">
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>VS Code</h4>
+                                    <p>微软出品的免费代码编辑器，插件丰富，适合各种语言</p>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fab fa-figma"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>Motrix</h4>
+                                    <p>下载器,支持多连接,中断,支持各种平台</p>
+                                </div>
+                            </div>
+
+                            <div class="rec-card">
+                                <div class="rec-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div class="rec-info">
+                                    <h4>Git & GitHub</h4>
+                                    <p>版本控制和代码托管，开发者必备技能</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 学习资源 -->
+                    <div class="recommendation-section full-width">
+                        <h3><i class="fas fa-book"></i> 学习资源</h3>
+                        <div class="resource-grid">
+                            <div class="resource-card">
+                                <h4>在线学习</h4>
+                                <ul>
+                                    <li>bilibili - 国内免费且优质的各种课程</li>
+                                    <li>菜鸟教程 - 各种教程</li>
+                                    <li>廖雪峰的官方网站 - 详细的编程教程</li>
+                                </ul>
+                            </div>
+                            <div class="resource-card">
+                                <h4>书籍推荐</h4>
+                                <ul>
+                                    <li>《python3网络爬虫开发实战(第2版)》崔庆才</li>
+                                    <li>《零基础学Python》老齐</li>
+                                    <li>《代码整洁之道》Robert C. Martin</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系方式 -->
+            <section class="tab-content" id="contact">
+                <div class="contact-container">
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <h3>保持联系</h3>
+                        <p>如果你对技术、项目合作或者只是想打个招呼，欢迎联系我！</p>
+
+                        <!-- 留言板部分 -->
+                        <div class="message-board">
+                            <h4><i class="fas fa-comments"></i> 留言板</h4>
+                            <p>你可以通过GitHub Issues给我留言：</p>
+                            <a href="https://github.com/limingda1212/limingda1212.github.io/issues/new"
+                               target="_blank"
+                               class="new-issue-btn">
+                                <i class="fab fa-github"></i> 发起留言
+                            </a>
+
+                            <!-- 留言列表容器 -->
+                            <div class="messages-container">
+                                <h5>最近留言</h5>
+                                <div id="messages-list" class="messages-list">
+                                    <div class="loading-messages">
+                                        <i class="fas fa-spinner fa-spin"></i> 正在加载留言...
+                                    </div>
+                                </div>
+                                <div id="messages-error" class="messages-error" style="display: none;">
+                                    <p>无法加载留言，请稍后再试或<a href="https://github.com/limingda1212/limingda1212.github.io/issues" target="_blank">直接在GitHub查看</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-details">
+                        <!-- 联系方式内容 -->
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>邮箱</h4>
+                                <p>limingda1212@outlook.com</p>
+                                <p>lmd101212@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/limingda1212" target="_blank">
+                                    github.com/limingda1212
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-weixin"></i>
+                            <div>
+                                <h4>微信</h4>
+                                <p>微信号: limingda1212</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>电话</h4>
+                                <p>176-8696-5698</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>李明达</h4>
+                    <p>10后编程探索者 | 持续学习中</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-tab="about" class="footer-tab-link">关于</a>
+                    <a href="#" data-tab="projects" class="footer-tab-link">项目</a>
+                    <a href="#" data-tab="recommendations" class="footer-tab-link">推荐</a>
+                    <a href="#" data-tab="contact" class="footer-tab-link">联系</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/limingda1212" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:limingda1212@outlook.com" title="邮箱">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 添加统计信息 -->
+            <div class="footer-stats">
+                <div class="stats-item">
+                    <i class="fas fa-clock"></i>
+                    <span>本站已运行 <span id="sitetime">0天0小时0分钟0秒</span></span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 李明达</p>
+                <p class="footer-tech">
+                    <span>Powered by <i class="fab fa-github"></i> GitHub Pages</span>
+                    <span> | </span>
+                    <span>Built with HTML5, CSS3 & JavaScript</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
