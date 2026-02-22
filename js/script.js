@@ -34,10 +34,11 @@ function initSlideshow() {
 
     // 使用时替换照片路径
     const photos = [
-        './photos/main/1.jpg',
-        './photos/main/2.jpg',
-        './photos/main/3.jpg',
-        './photos/main/4.jpg'
+        './photos/homepage_images/1.jpg',
+        './photos/homepage_images/2.jpg',
+        './photos/homepage_images/3.jpg',
+        './photos/homepage_images/4.jpg',
+        './photos/homepage_images/5.jpg'
     ];
 
     // 如果没有找到照片，使用默认渐变背景
