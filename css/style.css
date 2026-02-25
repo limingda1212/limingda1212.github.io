@@ -1174,6 +1174,111 @@ body.dark-theme .footer-stats {
     transform: translateY(-5px);
 }
 
+/* 声明弹窗 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 16px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: var(--shadow), 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h3 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.modal-close {
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+.modal-body {
+    padding: 24px;
+    line-height: 1.7;
+}
+
+.modal-body p {
+    margin-bottom: 12px;
+}
+
+.modal-body p:last-child {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #888;
+}
+
+.modal-footer {
+    padding: 16px 24px 24px;
+    text-align: right;
+}
+
+.modal-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+}
+
+.modal-btn:hover {
+    background-color: #3a5ce7;
+    transform: translateY(-2px);
+}
+
+body.dark-theme .modal-content {
+    border: 1px solid var(--border-color);
+}
+
 /* 动画 */
 @keyframes fadeInUp {
     from {

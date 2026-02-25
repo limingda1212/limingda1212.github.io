@@ -398,6 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initSlideshow();
     initTabs();
+    initDisclaimer();
     initScrollEffects();
     initSkillAnimation();
     initMessageBoard();
@@ -415,13 +416,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 10. 键盘快捷键
 document.addEventListener('keydown', (e) => {
+    // 如果弹窗开着，按 ESC 优先关闭弹窗
+    if (modal && modal.style.display === 'flex' && e.key === 'Escape') {
+        e.preventDefault();
+        closeDisclaimerModal();
+        return;
+    }
+
     // Ctrl + T 切换主题
     if (e.ctrlKey && e.key === 't') {
         e.preventDefault();
         themeToggle.click();
     }
 
-    // ESC 键回到顶部
+    // ESC 键回到顶部（仅当弹窗未开启时）
     if (e.key === 'Escape') {
         window.scrollTo({
             top: 0,
@@ -450,6 +458,45 @@ function enhanceProjectCards() {
         });
     });
 }
+
+// 12. 声明弹窗
+const modal = document.getElementById('disclaimer-modal');
+const modalClose = document.querySelector('.modal-close');
+const modalBtn = document.querySelector('.modal-btn');
+
+// 打开弹窗
+function showDisclaimerModal() {
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 禁止背景滚动
+}
+
+// 关闭弹窗
+function closeDisclaimerModal() {
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // 恢复滚动
+}
+
+// 点击遮罩关闭
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeDisclaimerModal();
+    }
+});
+
+// 初始化
+function initDisclaimer() {
+    // 为推荐按钮添加弹窗触发
+    const recTabBtn = document.querySelector('.tab-btn[data-tab="recommendations"]');
+    if (recTabBtn) {
+        recTabBtn.addEventListener('click', showDisclaimerModal);
+    }
+}
+
+// 关闭按钮事件
+if (modalClose) modalClose.addEventListener('click', closeDisclaimerModal);
+if (modalBtn) modalBtn.addEventListener('click', closeDisclaimerModal);
 
 // 初始化增强效果
 enhanceProjectCards();
