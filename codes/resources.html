@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>资源</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 返回主页圆按钮 -->
+  <a class="back-btn" href="../index.html" title="返回主页" aria-label="返回主页">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+  </a>
+
+  <main class="page">
+
+    <!-- 第一区域：开源项目（GitHub 自动抓取） -->
+    <section class="section-card">
+      <h2 class="section-title">开源项目</h2>
+      <p class="section-sub">我的 GitHub 公开仓库</p>
+      <div class="res-grid" id="repoList"><div class="loading">正在加载开源项目…</div></div>
+    </section>
+
+    <!-- 第二区域：推荐网站（datas/rec_web.csv） -->
+    <section class="section-card">
+      <h2 class="section-title">推荐网站</h2>
+      <p class="section-sub">我发现的神奇网站</p>
+      <div class="res-grid" id="webList"><div class="loading">正在加载推荐网站…</div></div>
+    </section>
+
+    <!-- 第三区域：资源分享（datas/shares/shares.csv） -->
+    <section class="section-card">
+      <h2 class="section-title">资源分享</h2>
+      <p class="section-sub">嗯，这都是好东西</p>
+      <div class="res-grid" id="shareList"><div class="loading">正在加载分享资源…</div></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="dot"></span><span id="uptime">正在计时…</span></p>
+    <p>© <span id="year"></span> limingda1212</p>
+  </footer>
+
+  <script src="resources.js"></script>
+</body>
+</html>

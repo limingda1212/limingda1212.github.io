@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>留言板</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 返回主页圆按钮 -->
+  <a class="back-btn" href="../index.html" title="返回主页" aria-label="返回主页">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+  </a>
+
+  <main class="page">
+    <section class="section-card">
+      <div class="msg-toolbar">
+        <h2 class="section-title">留言板</h2>
+        <a class="btn" href="https://github.com/limingda1212/limingda1212.github.io/issues/new" target="_blank" rel="noopener">去 GitHub 留言</a>
+      </div>
+      <p class="section-sub">留言会以 GitHub Issue 的形式保存在仓库中</p>
+      <div id="issueList"><div class="loading">正在加载留言…</div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="dot"></span><span id="uptime">正在计时…</span></p>
+    <p>© <span id="year"></span> limingda1212</p>
+  </footer>
+
+  <!-- 进入页面时弹出的鼓励语 -->
+  <div class="modal-mask" id="welcomeModal">
+    <div class="modal-card">
+      <div class="modal-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5C6.8 3.5 2.5 7.1 2.5 11.6c0 2.4 1.2 4.5 3.1 6L4 21.5l4.7-2.3c1 .3 2.1.5 3.3.5 5.2 0 9.5-3.6 9.5-8.1S17.2 3.5 12 3.5z"/><path d="M8.2 10.5h7.6M8.2 13.6h4.6"/></svg>
+      </div>
+      <h3 class="modal-title">欢迎来到留言板</h3>
+      <p class="modal-text">无论是一句悄悄话、一个建议，还是发现的小问题，都可以留下来。每条留言都会以 GitHub Issue 的形式好好保存。</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="modalLater">知道啦</button>
+        <a class="btn" href="https://github.com/limingda1212/limingda1212.github.io/issues/new" target="_blank" rel="noopener">现在就去留言</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="message.js"></script>
+</body>
+</html>

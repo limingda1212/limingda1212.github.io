@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 返回主页圆按钮 -->
+  <a class="back-btn" href="../index.html" title="返回主页" aria-label="返回主页">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+  </a>
+
+  <main class="page">
+    <!-- 第一区域：我的介绍 -->
+    <section class="section-card">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-intro">
+        <div class="about-text" id="aboutText"></div>
+        <div class="about-img"><img src="../photos/about.jpeg" alt="照片" /></div>
+      </div>
+    </section>
+
+    <!-- 第二区域：联系方式 -->
+    <section class="section-card">
+      <h2 class="section-title">联系方式</h2>
+      <div class="contacts-grid" id="contacts"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="dot"></span><span id="uptime">正在计时…</span></p>
+    <p>© <span id="year"></span> limingda1212</p>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+</html>
