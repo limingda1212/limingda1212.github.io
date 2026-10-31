@@ -59,7 +59,7 @@ async function loadRepos() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const repos = await res.json();
     if (!Array.isArray(repos) || !repos.length) {
-      wrap.innerHTML = '<div class="empty">还没有公开项目，先去 GitHub 创建一个吧</div>';
+      wrap.innerHTML = '<div class="empty">还没有公开项目</div>';
       return;
     }
     wrap.innerHTML = repos.map(r => {
@@ -68,7 +68,7 @@ async function loadRepos() {
       return resCard(r.name, r.description || '这个项目还没有简介', r.html_url, tag);
     }).join('');
   } catch (e) {
-    wrap.innerHTML = `<div class="error">开源项目加载失败：${escapeHtml(e.message)}。如果是在本地直接打开文件，请部署到 GitHub Pages 后再看。</div>`;
+    wrap.innerHTML = `<div class="error">开源项目加载失败：${escapeHtml(e.message)}。</div>`; // 如果是在本地直接打开文件，部署到 GitHub Pages 后再看。
   }
 }
 
@@ -81,7 +81,7 @@ async function loadCSVList(path, id, prefixRelative) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const rows = parseCSV(await res.text()).slice(1); // 跳过表头
     if (!rows.length) {
-      wrap.innerHTML = '<div class="empty">还没有数据，去对应的 CSV 文件里补充吧</div>';
+      wrap.innerHTML = '<div class="empty">CSV还没有数据</div>';
       return;
     }
     wrap.innerHTML = rows.map(r => {
@@ -92,7 +92,7 @@ async function loadCSVList(path, id, prefixRelative) {
       return resCard(r[0], r[1] || '暂无介绍', url || '#');
     }).join('');
   } catch (e) {
-    wrap.innerHTML = `<div class="error">加载失败：${escapeHtml(e.message)}。如果是在本地直接打开文件，请部署到 GitHub Pages 后再看。</div>`;
+    wrap.innerHTML = `<div class="error">加载失败：${escapeHtml(e.message)}。</div>`; // 如果是在本地直接打开文件，部署到 GitHub Pages 后再看。
   }
 }
 

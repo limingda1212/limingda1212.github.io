@@ -8,11 +8,11 @@
 /* ---------- 1. 社交平台 ----------
    每个圆框：name 平台名 / letter 圆框里显示的字 / color 背景色 / url 链接 */
 const SOCIALS = [
-  {name: 'GitHub', letter: 'G', color: '#24292e', url: 'https://github.com/limingda1212'},
-  {name: '抖音', letter: 'D', color: '#e8503a', url: 'https://www.douyin.com/user/MS4wLjABAAAAFmQggqERHXrt4JxDx-ZBJb7hDFBEU33dXYRzm1aEoRPRDJ75K-tpAe6QQN3h80wY'},
+  {name: 'GitHub', letter: 'G', color: '#89c2ffe0', url: 'https://github.com/limingda1212'},
+  {name: 'Gitcode', letter: 'G', color: '#89c2ffe0', url: 'https://gitcode.com/limingda1212'},
+  {name: '抖音', letter: 'D', color: '#89c2ffe0', url: 'https://www.douyin.com/user/MS4wLjABAAAAFmQggqERHXrt4JxDx-ZBJb7hDFBEU33dXYRzm1aEoRPRDJ75K-tpAe6QQN3h80wY'},
   // {name: '知乎', letter: '知', color: '#1e80c2', url: '#'},
-  {name: 'B站', letter: 'B', color: '#fb7299', url: 'https://space.bilibili.com/3690998255323468'},
-  {name: '邮箱', letter: '@', color: '#56a8c9', url: 'limingda1212@outlook.com'},
+  {name: 'B站', letter: 'B', color: '#89c2ffe0', url: 'https://space.bilibili.com/3690998255323468'},
   // {name: '博客', letter: '博', color: '#6f9f68', url: '#'}
 ];
 

@@ -7,12 +7,31 @@
 
 /* 搜索引擎：url 为搜索页地址 + 关键词的拼接模板 */
 const ENGINES = [
-  { name: '百度',     url: 'https://www.baidu.com/s?wd=' },
-  { name: 'Google',   url: 'https://www.google.com/search?q=' },
-  { name: 'Bing',     url: 'https://www.bing.com/search?q=' },
-  { name: 'GitHub',   url: 'https://github.com/search?q=' },
-  { name: '知乎',     url: 'https://www.zhihu.com/search?type=content&q=' },
-  { name: '哔哩哔哩', url: 'https://search.bilibili.com/all?keyword=' }
+    { name: 'Bing',     url: 'https://www.bing.com/search?q=' },
+    { name: '百度',     url: 'https://www.baidu.com/s?wd=' },
+    { name: 'Google',   url: 'https://www.google.com/search?q=' },
+    { name: 'GitHub',   url: 'https://github.com/search?q=' },
+    { name: '知乎',     url: 'https://www.zhihu.com/search?type=content&q=' },
+    { name: '哔哩哔哩', url: 'https://search.bilibili.com/all?keyword=' },
+    { name: '360搜索',  url: 'https://www.so.com/s?q=' },
+    { name: '搜狗',     url: 'https://www.sogou.com/web?query=' },
+    { name: '夸克',     url: 'https://ai.quark.cn/s?q=' },
+    { name: '神马',     url: 'https://m.sm.cn/s?q=' },
+    { name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=' },
+    { name: 'Ecosia',   url: 'https://www.ecosia.org/search?q=' },
+    { name: 'Yahoo',    url: 'https://sg.search.yahoo.com/search?p=' },
+    { name: 'Qwant',    url: 'https://www.qwant.us/?q=' },
+    { name: 'Brave',    url: 'https://safe.search.brave.com/search?q=' },
+    { name: 'NAVER',    url: 'https://search.naver.com/search.naver?query=' },
+    { name: 'SearXNG-1',url: 'https://searxng.f24o.zip/search?q=' },
+    { name: 'SearXNG-2',url: 'https://search.catboy.house/search?q=' },
+    { name: 'SearXNG-3',url: 'https://search.080609.xyz/search?q=' },
+    { name: 'SearXNG-4',url: 'https://suche.dasnetzundich.de/searx/search?q=' },
+    { name: '4get-1',   url: 'https://4get.nadeko.net/search?q=' },
+    { name: '4get-2',   url: 'https://4get.ca/search?q=' },
+    { name: '4get-3',   url: 'https://4get.silly.computer/search?q=' },
+    { name: '4get-4',   url: 'https://4get.dcs0.hu/search?q=' },
+    { name: 'Semantic Scholar', url: 'https://www.semanticscholar.org/search?q=' }
 ];
 
 function escapeHtml(str) {
@@ -77,7 +96,7 @@ async function loadQuickSites() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const rows = parseCSV(await res.text()).slice(1); // 跳过表头
     if (!rows.length) {
-      wrap.innerHTML = '<div class="empty">还没有常用网站，去 datas/web.csv 里添加吧</div>';
+      wrap.innerHTML = '<div class="empty">还没有常用网站</div>';
       return;
     }
     wrap.innerHTML = rows.map(r => {
@@ -89,7 +108,7 @@ async function loadQuickSites() {
       </a>`;
     }).join('');
   } catch (e) {
-    wrap.innerHTML = `<div class="empty">常用网站加载失败：${escapeHtml(e.message)}。部署到 GitHub Pages 后即可正常显示。</div>`;
+    wrap.innerHTML = `<div class="empty">常用网站加载失败：${escapeHtml(e.message)}。</div>`;  // 部署到 GitHub Pages 后即可正常显示。
   }
 }
 
