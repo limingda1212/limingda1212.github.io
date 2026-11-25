@@ -22,8 +22,8 @@ const CARDS = [
   {title: '资源', desc: '开源项目 · 推荐网站 · 分享资源', icon: 'box', href: 'codes/resources.html'},
   {title: '留言', desc: '基于 GitHub Issue 的留言板', icon: 'chat', href: 'codes/message.html'},
   {title: '搜索聚合', desc: '多引擎一键搜索，常用网站直达', icon: 'search', href: 'codes/search.html'},
-  {title: '待开发 1', desc: '这里藏着一个还没想好的小功能', icon: 'sparkle', href: 'codes/dev1.html'},
-  {title: '待开发 2', desc: '另一个正在酝酿的小功能', icon: 'heart', href: 'codes/dev2.html'}
+  {title: '工具箱', desc: '这里藏着一些小功能', icon: 'sparkle', href: 'codes/dev1.html'},
+  {title: '待开发 1', desc: '另一个正在酝酿的小功能', icon: 'heart', href: 'codes/dev2.html'}
 ];
 
 // icon 图标
