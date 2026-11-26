@@ -10,7 +10,7 @@
 const SOCIALS = [
   {name: 'GitHub', letter: 'G', color: '#8fd5bcb5', url: 'https://github.com/limingda1212'},
   {name: 'Gitcode', letter: 'G', color: '#8fd5bcb5', url: 'https://gitcode.com/limingda1212'},
-  {name: '抖音', letter: 'D', color: '#8fd5bcb5', url: 'https://www.douyin.com/user/MS4wLjABAAAAFmQggqERHXrt4JxDx-ZBJb7hDFBEU33dXYRzm1aEoRPRDJ75K-tpAe6QQN3h80wY'},
+  {name: '抖音', letter: '抖', color: '#8fd5bcb5', url: 'https://www.douyin.com/user/MS4wLjABAAAAFmQggqERHXrt4JxDx-ZBJb7hDFBEU33dXYRzm1aEoRPRDJ75K-tpAe6QQN3h80wY'},
   // {name: '知乎', letter: '知', color: '#1e80c2', url: '#'},
   {name: 'B站', letter: 'B', color: '#8fd5bcb5', url: 'https://space.bilibili.com/3690998255323468'},
   // {name: '博客', letter: '博', color: '#6f9f68', url: '#'}
@@ -22,7 +22,7 @@ const CARDS = [
   {title: '资源', desc: '开源项目 · 推荐网站 · 分享资源', icon: 'box', href: 'codes/resources.html'},
   {title: '留言', desc: '基于 GitHub Issue 的留言板', icon: 'chat', href: 'codes/message.html'},
   {title: '搜索聚合', desc: '多引擎一键搜索，常用网站直达', icon: 'search', href: 'codes/search.html'},
-  {title: '工具箱', desc: '这里藏着一些小功能', icon: 'sparkle', href: 'codes/dev1.html'},
+  {title: '工具箱', desc: '这里藏着一些小功能', icon: 'sparkle', href: 'codes/tools.html'},
   {title: '待开发 1', desc: '另一个正在酝酿的小功能', icon: 'heart', href: 'codes/dev2.html'}
 ];
 

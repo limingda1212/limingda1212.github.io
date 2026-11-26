@@ -156,9 +156,9 @@ img { display: block; max-width: 100%; }
 }
 .card::after {
   content: "";
-  position: absolute;
-  right: -34px; top: -34px;
-  width: 96px; height: 96px;
+  /*position: absolute;*/
+  /*right: -34px; top: -34px;*/
+  /*width: 96px; height: 96px;*/
   border-radius: 50%;
   background: radial-gradient(circle, rgba(163, 213, 230, 0.35), transparent 70%);
   pointer-events: none;
@@ -529,6 +529,9 @@ a.contact-chip:hover {
   cursor: pointer;
   outline: none;
   border-radius: 999px;
+  width: auto;
+  min-width: 72px;
+  white-space: nowrap;
 }
 .search-panel select:hover { background-color: rgba(255, 255, 255, 0.6); }
 .search-panel input {

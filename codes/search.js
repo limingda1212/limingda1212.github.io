@@ -112,6 +112,23 @@ async function loadQuickSites() {
   }
 }
 
+/* 让下拉框宽度随当前选中项文字长度自适应 */
+let engineMeasurer = null;
+function resizeEngineSelect() {
+  const sel = document.getElementById('engine');
+  if (!sel) return;
+  if (!engineMeasurer) {
+    engineMeasurer = document.createElement('span');
+    engineMeasurer.style.cssText =
+      'position:absolute;left:-9999px;visibility:hidden;white-space:nowrap;' +
+      'font-family:inherit;font-size:14px;';
+    document.body.appendChild(engineMeasurer);
+  }
+  engineMeasurer.textContent = sel.options[sel.selectedIndex].text;
+  /* 左右内边距：左 12px，右 24px（预留下拉箭头位置） */
+  sel.style.width = (engineMeasurer.offsetWidth + 12 + 24) + 'px';
+}
+
 /* ---------- 站尾运行计时（与主页一致） ---------- */
 const SITE_START = new Date('2026-02-07T00:00:00+08:00'); // 网站首次上线时间
 
@@ -142,6 +159,11 @@ function setYear() {
 
 /* ---------- 初始化 ---------- */
 renderEngines();
+
+resizeEngineSelect();                                          // 初始按默认选项定宽
+document.getElementById('engine').addEventListener('change', resizeEngineSelect); // 切换时重新定宽
+window.addEventListener('resize', resizeEngineSelect);          // 窗口尺寸变化时重新定宽
+
 document.getElementById('searchBtn').addEventListener('click', doSearch);
 document.getElementById('q').addEventListener('keydown', function (e) {
   if (e.key === 'Enter') doSearch();
