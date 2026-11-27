@@ -20,6 +20,11 @@
     --green: #1fa376;
     --row-h: clamp(24px, 6.2vw, 42px);
     --aisle-w: clamp(8px, 2.3vw, 15px);
+
+    --white-glass: rgba(255, 255, 255, 0.78);
+
+    --shadow-soft:  0 6px 24px rgba(120, 178, 202, 0.22);
+    --shadow-hover: 0 14px 34px rgba(96, 164, 196, 0.32);
   }
 
   body{
@@ -34,7 +39,30 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  a { color: inherit; text-decoration: none; }
+
   .wrap{ max-width: 720px; margin: 0 auto; }
+
+  /* ---------------- 返回主页圆按钮 ---------------- */
+  .back-btn {
+    position: fixed;
+    top: 20px; right: 22px;
+    z-index: 60;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--white-glass);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-soft);
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .back-btn:hover {
+    transform: rotate(-18deg) scale(1.06);
+    box-shadow: var(--shadow-hover);
+  }
+  .back-btn svg { width: 20px; height: 20px; }
 
   /* ---------- 标题 ---------- */
   .header{ text-align: center; margin: 0 0 18px; }
@@ -241,7 +269,7 @@
     font-size: 14px; flex-wrap: wrap; justify-content: flex-end;
   }
   .hchip{
-    background: #f1f5fa; border: 1px solid #e5ecf5; border-radius: 999px;
+    background: #aecef6; border: 1px solid #e5ecf5; border-radius: 999px;
     padding: 2px 7px; color: #5f6d80; font-size: 10px;
   }
 
@@ -269,6 +297,11 @@
 <!--    <p class="subtitle">班级 63 人 · 7 列 × 9 排 · 随机抽取，玩的就是刺激</p>-->
     <p class="subtitle">随机抽取，玩的就是刺激👽👽👽</p>
   </header>
+
+  <!-- 返回主页圆按钮 --> 
+  <a class="back-btn" href="../tools.html" title="返回主页" aria-label="返回主页">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+  </a>
 
   <!-- ===== 座位排布 ===== -->
   <section class="card board-card">
@@ -526,7 +559,7 @@
       updateResult();
       popResult();
 
-      records.push((type === 'col' ? '列 ' : '排 ') + finalIdx);
+      records.push((type === 'col' ? '排 ' : '列 ') + finalIdx);
       if (records.length > 3) records.shift();
       renderRecords();
 
